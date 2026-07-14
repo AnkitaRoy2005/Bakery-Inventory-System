@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Inventory System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🍞 Bakery Inventory Management</h1>
+
+<!-- Add Product -->
+<div class="container">
+
+    <h2>Add Bakery Product</h2>
+
+    <input type="text" id="name" placeholder="Product Name">
+
+    <input type="text" id="category" placeholder="Category">
+
+    <input type="number" id="price" placeholder="Price">
+
+    <button onclick="addProduct()">Add Product</button>
+
+</div>
+
+<!-- Godown -->
+
+<div class="container">
+
+    <h2>Godown Inventory</h2>
+
+    <h3>Add Stock to Godown</h3>
+
+    <input type="text" id="godownItem" placeholder="Product Name">
+
+    <input type="number" id="godownQty" placeholder="Quantity" min="1">
+
+    <button onclick="addGodownStock()">Add Stock</button>
+
+    <div id="godownList"></div>
+
+    <hr>
+
+    <h3>Transfer Stock To Shop</h3>
+
+    <input type="text" id="transferItem" placeholder="Item Name" list="godownItems">
+
+    <datalist id="godownItems"></datalist>
+
+    <input type="number" id="transferQty" placeholder="Quantity" min="1">
+
+    <button onclick="transferStock()">Transfer</button>
+
+    <p id="status" role="status"></p>
+
+</div>
+
+<!-- Shop Inventory -->
+
+<div class="container">
+
+    <h2>Shop Inventory</h2>
+
+    <div id="productList"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
