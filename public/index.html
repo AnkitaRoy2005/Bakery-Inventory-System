@@ -1,73 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakery Inventory System</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crumb & Co. | Inventory</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1>🍞 Bakery Inventory Management</h1>
-
-<!-- Add Product -->
-<div class="container">
-
-    <h2>Add Bakery Product</h2>
-
-    <input type="text" id="name" placeholder="Product Name">
-
-    <input type="text" id="category" placeholder="Category">
-
-    <input type="number" id="price" placeholder="Price">
-
-    <button onclick="addProduct()">Add Product</button>
-
-</div>
-
-<!-- Godown -->
-
-<div class="container">
-
-    <h2>Godown Inventory</h2>
-
-    <h3>Add Stock to Godown</h3>
-
-    <input type="text" id="godownItem" placeholder="Product Name">
-
-    <input type="number" id="godownQty" placeholder="Quantity" min="1">
-
-    <button onclick="addGodownStock()">Add Stock</button>
-
-    <div id="godownList"></div>
-
-    <hr>
-
-    <h3>Transfer Stock To Shop</h3>
-
-    <input type="text" id="transferItem" placeholder="Item Name" list="godownItems">
-
-    <datalist id="godownItems"></datalist>
-
-    <input type="number" id="transferQty" placeholder="Quantity" min="1">
-
-    <button onclick="transferStock()">Transfer</button>
-
-    <p id="status" role="status"></p>
-
-</div>
-
-<!-- Shop Inventory -->
-
-<div class="container">
-
-    <h2>Shop Inventory</h2>
-
-    <div id="productList"></div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <main id="loginScreen" class="login-screen">
+    <section class="login-card"><div class="brand-mark"></div><p class="eyebrow">BAKERY INVENTORY SYSTEM</p><h1>Sign in</h1><p class="muted">Use your account to continue.</p>
+      <form id="loginForm" onsubmit="login(event)"><label>Username<input id="username" required autocomplete="username" placeholder="admin or shop"></label><label>Password<input id="password" type="password" required autocomplete="current-password" placeholder="admin123 or shop123"></label><button type="submit">Sign in</button><p class="hint">Demo: <b>admin / admin123</b> or <b>shop / shop123</b></p><p id="loginError" class="error" aria-live="polite"></p></form>
+    </section>
+  </main>
+  <div id="app" class="app hidden">
+    <aside><div class="logo"><span></span> Bakery Inventory<small>MANAGEMENT SYSTEM</small></div><nav id="nav"></nav><div class="user-box"><span id="roleLabel"></span><button class="text-btn" onclick="logout()">Log out</button></div></aside>
+    <section class="content"><header><div><p class="eyebrow" id="pageKicker">OVERVIEW</p><h1 id="pageTitle">Dashboard</h1></div><div class="date" id="today"></div></header><p id="toast" role="status"></p><div id="view"></div></section>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
